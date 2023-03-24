@@ -35,7 +35,7 @@ export const styles = StyleSheet.create({
     position: "absolute",
     top: -60,
     right: "50%",
-    transform: [{ translateX: 45 }],
+    transform: [{ translateX: 60 }],
     height: 120,
     width: 120,
     borderRadius: 16,
@@ -49,8 +49,18 @@ export const styles = StyleSheet.create({
   },
   showBtn: {
     position: "absolute",
-    right: 0,
-    bottom: 25,
+    top: 15,
+		right: 0 ,
+    zIndex: 10,
+    
+    paddingTop: 15,
+    paddingBottom: 15,
+    paddingRight: 15,
+    paddingLeft: 15,
+  },
+  showBtnTitle: {
+    color: "#1B4371",
   }
+
 });
 

@@ -6,7 +6,7 @@ import { MainBtn } from "../MainBtn/MainBtn";
 import { InputField } from "../InputField.js/InputField";
 
 
-import {View, Text, KeyboardAvoidingView, Platform, TouchableWithoutFeedback} from "react-native";
+import {View, Text, KeyboardAvoidingView, Platform, TouchableWithoutFeedback, TouchableOpacity} from "react-native";
 
 export const RegistrationScreen = ({
     login,
@@ -18,8 +18,8 @@ export const RegistrationScreen = ({
     keyboardHide,
     isShowKeyboard,
     keyboardShow,
+
 }) => {
-    
     
     const [secureTextEntry, setSecureTextEntry] = useState(true);
 
@@ -35,32 +35,36 @@ export const RegistrationScreen = ({
 
                             <InputField
                                 placeholder="Login"
-                                value={login}
-                                onChangeText={nameHandler}
+                                // value={login}
                                 onFocus={keyboardShow}
+                                // onChangeText={}
                             />
 
                             <InputField
                                 placeholder="Email"
-                                value={email}
+                                // value={email}
                                 onChangeText={emailHandler}
                                 onFocus={keyboardShow}
                             />
 
-                            <View style={{
-                                position: "relative"
-                            }}>
-                                <InputField 
-                                placeholder="Password"
-                                value={password}
-                                secureTextEntry={true}
-                                onChangeText={passwordHandler}
-                                onFocus={keyboardShow}
+                            <View style={{ position: "relative" }}>
+                                
+                                <TouchableOpacity style={styles.showBtn}
+                                    onPress={() => setSecureTextEntry((prevState) => !prevState)}
+                                >
+                                    <Text style={styles.showBtnTitle}>{secureTextEntry ? "Show" : "Hide"}</Text>
+
+                                </TouchableOpacity>
+                                <InputField
+                                    placeholder="Password"
+                                    // value={password}
+                                    secureTextEntry={secureTextEntry}
+                                    onChangeText={passwordHandler}
+                                    onFocus={keyboardShow}
                                 />
-                                <Text style={styles.showBtn}>Show</Text>
+                                
                             </View>
                            
-                            
                             <MainBtn keyboardHide={keyboardHide} />
                         </View>
 

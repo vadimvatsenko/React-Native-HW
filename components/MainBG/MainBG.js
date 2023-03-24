@@ -1,13 +1,13 @@
 import { ImageBackground, Keyboard, StyleSheet, TouchableWithoutFeedback} from "react-native";
 
-const mainBGPath = "../../assets/images/main_BG_2x.jpg"
+const mainBGPath = require("../../assets/images/main_BG_2x.jpg")
 
 export const MainBG = ({children, keyboardHide}) => {
 
     return (
         <TouchableWithoutFeedback onPress={keyboardHide}>
             <ImageBackground
-                source={require(mainBGPath)}
+                source={mainBGPath}
                 resizeMode="cover"
                 style={styles.image}
             >
