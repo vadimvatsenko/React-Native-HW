@@ -1,7 +1,4 @@
 import React, { useState } from "react";
-import { styles } from "./RegistrationFormStyled"
-import { MainBtn } from "../MainBtn/MainBtn";
-import { InputField } from "../InputField/InputField";
 import {
     View,
     Text,
@@ -11,6 +8,11 @@ import {
     TouchableOpacity
 } from "react-native";
 import { Image } from 'expo-image';
+
+import MainBtn from "../MainBtn";
+import InputField from '../InputField';
+
+import { styles } from "./RegistrationFormStyled";
 
 const initialState = {
         login: "",
@@ -23,7 +25,8 @@ export const RegistrationForm = ({
     keyboardShow,
     isShowKeyboard,
     showPassword,
-    showPasswordToogle
+    showPasswordToogle,
+    dinamicFormPadding
 }) => {
    
     const [formData, setFormData] = useState(initialState);
@@ -38,7 +41,12 @@ export const RegistrationForm = ({
             <View
                 style={styles.container}>
                 <KeyboardAvoidingView behavior={Platform.OS == "ios" ? "padding" : "height"}>
-                    <View style={{ ...styles.formWrap, marginBottom: isShowKeyboard ? -175 : 0 }}>
+                    <View style={{
+                        ...styles.formWrap,
+                        marginBottom: isShowKeyboard ? -175 : 0,
+                        paddingLeft: dinamicFormPadding(),
+                        paddingRight: dinamicFormPadding(),
+                    }}>
                         <View style={styles.avatarWrap}>
                             <Image
                                 style={styles.addIcon}
@@ -84,7 +92,9 @@ export const RegistrationForm = ({
                                 
                             </View>
                            
-                            <MainBtn handleSubmit={handleSubmit} />
+                            <MainBtn
+                                title="Register"
+                                handleSubmit={handleSubmit} />
                         </View>
 
                         <Text style={styles.loginLink}>already have an account? login</Text>

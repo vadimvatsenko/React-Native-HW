@@ -3,7 +3,7 @@ import { MainBG } from "../components/MainBG/MainBG";
 import RegistrationForm from "../components/RegistrationForm";
 
 
-export const Register = ({isShowKeyboard, keyboardHide, keyboardShow, showPasswordToogle, showPassword}) => {
+export const Register = ({isShowKeyboard, keyboardHide, keyboardShow, showPasswordToogle, showPassword, dinamicFormPadding}) => {
     return (
         <MainBG
             keyboardHide={keyboardHide}>
@@ -13,6 +13,7 @@ export const Register = ({isShowKeyboard, keyboardHide, keyboardShow, showPasswo
                 isShowKeyboard={isShowKeyboard}
                 showPassword={showPassword}
                 showPasswordToogle={showPasswordToogle}
+                dinamicFormPadding={dinamicFormPadding}
             />
         </MainBG>
     );

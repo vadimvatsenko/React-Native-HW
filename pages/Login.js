@@ -1,5 +1,5 @@
 import React from "react";
-import { MainBG } from "../components/MainBG/MainBG";
+import MainBG from "../components/MainBG";
 import LoginForm from "../components/LoginForm/";
 
 
@@ -8,18 +8,21 @@ export const Login = ({
     keyboardHide,
     keyboardShow,
     showPasswordToogle,
-    showPassword
+    showPassword,
+    dinamicFormPadding
 }) => {
 
     return (
         <MainBG
-            keyboardHide={keyboardHide}>
+            keyboardHide={keyboardHide}
+            >
             <LoginForm
                 keyboardHide={keyboardHide}
                 keyboardShow={keyboardShow}
                 isShowKeyboard={isShowKeyboard}
                 showPassword={showPassword}
                 showPasswordToogle={showPasswordToogle}
+                dinamicFormPadding={dinamicFormPadding}
             />
         </MainBG>
 

@@ -8,6 +8,7 @@ export const styles = StyleSheet.create({
   formWrap: {
     position: "relative",
     backgroundColor: '#FFFFFF',
+    textAlign: 'center',
     height: "auto",
     marginTop: 'auto',
     paddingTop: 92,

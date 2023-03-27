@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import { styles } from "../RegistrationForm/RegistrationFormStyled"
-import { MainBtn } from "../MainBtn/MainBtn";
-import { InputField } from "../InputField/InputField";
+
 import {
     View,
     Text,
@@ -11,10 +9,12 @@ import {
     TouchableOpacity
 } from "react-native";
 
-import { Image } from 'expo-image';
+import MainBtn from "../MainBtn";
+import InputField from "../InputField";
+
+import { styles } from "../RegistrationForm/RegistrationFormStyled";
 
 const initialState = {
-        login: "",
         email: "",
         password: "",
 }
@@ -24,7 +24,8 @@ export const LoginForm = ({
     keyboardShow,
     isShowKeyboard,
     showPassword,
-    showPasswordToogle
+    showPasswordToogle,
+    dinamicFormPadding
 }) => {
    
     const [formData, setFormData] = useState(initialState);
@@ -32,34 +33,25 @@ export const LoginForm = ({
     const handleSubmit = () => {
         console.log(formData)
         setFormData(initialState);
+
     }
-    
+
     return (
  
         <TouchableWithoutFeedback onPress={keyboardHide}>
             <View
                 style={styles.container}>
                 <KeyboardAvoidingView behavior={Platform.OS == "ios" ? "padding" : "height"}>
-                    <View style={{ ...styles.formWrap, marginBottom: isShowKeyboard ? -175 : 0 }}>
-                        <View style={styles.avatarWrap}>
-                            <Image
-                                style={styles.addIcon}
-                                source={require('../../assets/icons/addAvatar.svg')}
-
-                                
-                            />
-  
-                        </View>
-                        <Text style={styles.title}>Register</Text>
+                    <View style={{
+                        ...styles.formWrap,
+                        paddingTop: 32,
+                        marginBottom: isShowKeyboard ? -175 : 0,
+                        paddingRight: dinamicFormPadding(),
+                        paddingLeft: dinamicFormPadding(),
+                       
+                    }}>
+                        <Text style={styles.title}>Login</Text>
                         <View style={styles.inputWrapper}>
-
-                            <InputField
-                                placeholder="Login"
-                                onFocus={keyboardShow}
-                                onChangeText={(value) => setFormData((prevState) => ({ ...formData, login: value }))}
-                                value={formData.login}
-
-                            />
 
                             <InputField
                                 placeholder="Email"
@@ -86,10 +78,13 @@ export const LoginForm = ({
                                 
                             </View>
                            
-                            <MainBtn handleSubmit={handleSubmit} />
+                            <MainBtn
+                                title="Login"
+                                handleSubmit={handleSubmit}
+                            />
                         </View>
 
-                        <Text style={styles.loginLink}>already have an account? login</Text>
+                        <Text style={styles.loginLink}>Don't have an account? Register</Text>
                     
                     </View>
                 </KeyboardAvoidingView>

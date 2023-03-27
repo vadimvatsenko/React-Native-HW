@@ -1,4 +1,5 @@
-import { ImageBackground, Keyboard, StyleSheet, TouchableWithoutFeedback} from "react-native";
+import { ImageBackground, TouchableWithoutFeedback } from "react-native";
+import { styles } from './mainBGStyled';
 
 const mainBGPath = require("../../assets/images/main_BG_2x.jpg")
 
@@ -17,11 +18,3 @@ export const MainBG = ({children, keyboardHide}) => {
     );
 }
 
-const styles = StyleSheet.create({
-    image: {
-        flex: 1,
-        justifyContent: 'flex-end',
-        height: "100%",
-
-    },
-})
