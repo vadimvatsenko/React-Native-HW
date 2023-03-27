@@ -1,11 +1,11 @@
 import { TouchableOpacity, StyleSheet, Text } from "react-native"
 
-export const MainBtn = ({keyboardHide}) => {
+export const MainBtn = ({handleSubmit}) => {
     return (
         <TouchableOpacity
             style={styles.btn}
             activeOpacity={0.7}
-            onPress={keyboardHide}
+            onPress={handleSubmit}
         >
             <Text
                 style={styles.btnText}>Register</Text>
@@ -27,6 +27,7 @@ export const styles = StyleSheet.create({
     btnText: {
         color: "#FFFFFF",
         fontSize: 16,
+        fontFamily: 'Play-Bold'
     },
 })
 

@@ -12,11 +12,11 @@ export const styles = StyleSheet.create({
     marginTop: 'auto',
     paddingTop: 92,
     paddingBottom: 78,
-    // marginBottom: -100,
     paddingRight: 16,
     paddingLeft: 16,
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
+    fontFamily: 'Play-Regular'
 
   },
   title: {
@@ -24,7 +24,8 @@ export const styles = StyleSheet.create({
     fontWeight: 500,
     fontSize: 30,
     textAlign: 'center',
-    color: "#212121"
+    color: "#212121",
+    fontFamily: 'Play-Regular'
   },
   inputWrapper: {
     marginTop: -16,
@@ -35,17 +36,25 @@ export const styles = StyleSheet.create({
     position: "absolute",
     top: -60,
     right: "50%",
-    transform: [{ translateX: 60 }],
+    transform: [{ translateX: 45 }],
     height: 120,
     width: 120,
     borderRadius: 16,
     backgroundColor: "#F6F6F6"
+  },
+  addIcon: {
+  width: 25,
+  height: 25,
+  left: 107,
+  top: 80,
+  position: "absolute"
   },
 
   loginLink: {
     color: "#1B4371",
     textAlign: "center",
     marginTop: 16,
+    fontFamily: 'Play-Regular'
   },
   showBtn: {
     position: "absolute",
@@ -60,6 +69,7 @@ export const styles = StyleSheet.create({
   },
   showBtnTitle: {
     color: "#1B4371",
+    fontFamily: 'Play-Regular'
   }
 
 });

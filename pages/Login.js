@@ -1,13 +1,20 @@
 import React from "react";
 import { MainBG } from "../components/MainBG/MainBG";
-import RegistrationForm from "../components/RegistrationForm";
+import LoginForm from "../components/LoginForm/";
 
 
-export const Register = ({isShowKeyboard, keyboardHide, keyboardShow, showPasswordToogle, showPassword}) => {
+export const Login = ({
+    isShowKeyboard,
+    keyboardHide,
+    keyboardShow,
+    showPasswordToogle,
+    showPassword
+}) => {
+
     return (
         <MainBG
             keyboardHide={keyboardHide}>
-            <RegistrationForm
+            <LoginForm
                 keyboardHide={keyboardHide}
                 keyboardShow={keyboardShow}
                 isShowKeyboard={isShowKeyboard}
@@ -15,6 +22,6 @@ export const Register = ({isShowKeyboard, keyboardHide, keyboardShow, showPasswo
                 showPasswordToogle={showPasswordToogle}
             />
         </MainBG>
+
     );
 }
-

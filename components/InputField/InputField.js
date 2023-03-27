@@ -1,4 +1,5 @@
 import { TextInput, StyleSheet } from "react-native";
+import {styles} from './InputFieldStyled'
 
 export const InputField = ({placeholder, value, onChangeText, onFocus, secureTextEntry}) => {
     return (
@@ -13,17 +14,4 @@ export const InputField = ({placeholder, value, onChangeText, onFocus, secureTex
     )
 }
 
-export const styles = StyleSheet.create({
 
-    input: {
-        backgroundColor: "#F6F6F6",
-        width: "100%",
-        height: 50,
-        borderWidth: 1,
-        borderRadius: 8,
-        borderColor: "#E8E8E8",
-        padding: 16,
-        marginTop: 16,
-    },
-    
-})
